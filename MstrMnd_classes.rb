@@ -48,11 +48,11 @@ class Play_Game
     @create_game=create_game
   end
   def colors
-    @colors=['r','g','b','y','p','o','w','s']
+    ['r','g','b','y','p','o','w','s']
   end
   def create_sequence
-    pegs=@create_game.pegs
-    puts "working!!!!"
+    @sequence=colors.shuffle.take(@create_game.pegs)
+    print @sequence
   end
 end
 
