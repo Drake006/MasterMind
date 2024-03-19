@@ -54,6 +54,7 @@ class Play_Game
   end
   def create_sequence
     pegs=@create_game.pegs
+    puts "working!!!!"
   end
 end
 
