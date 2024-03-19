@@ -4,7 +4,7 @@ class Create_Game
   #displays the rules of the game if the user chooses to do so (they may not want to if they already know how to play).
   def rules
     print "Would you like to see the rules (y/n)?"
-    if gets.chomp.downcase='y'
+    if gets.chomp.downcase=='y'
       puts"Welcome to mastermind!!! Here you will try and guess the coreect sequence of colors represented by letters. The list of colors are: \n
       red='r'  green='g'  blue='b'  yellow='y'/n
       purple='p'  orange='o'  white='w'  silver='s'/n
@@ -15,8 +15,6 @@ class Create_Game
       that you have a color in the right place. A '.' means that you have the right color and an 'x' tells you that you have the wrong color. But be warned\n
       the order of the combination of \u2713's,.s' and x's isn't the same as the actual sequence of colors. \u2713's will always appear first, then .'s and then x's\n.
       Once the Game is finished you will have the option to select a play again and choose different paramaters (or the same ones) is you so please. Enjoy :)"
-    else
-      continue
     end
   end
   
