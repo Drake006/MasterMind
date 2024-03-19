@@ -33,8 +33,10 @@ class Create_Game
       #if statements ensure that a valid input is used.
       if input=='y'
         @dups=true
+        break
       elsif input=='n'
         @dups=false
+        break
       else
         puts"Invalid input. Please enter 'y' for yes or 'n' for no."
       end
