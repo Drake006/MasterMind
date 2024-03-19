@@ -5,12 +5,12 @@ class Create_Game
   def rules
     print "Would you like to see the rules (y/n)?"
     if gets.chomp.downcase=='y'
-      print"Welcome to mastermind!!! Here you will try and guess the coreect sequence of colors represented by letters. The list of colors are:
+      puts"Welcome to mastermind!!! Here you will try and guess the coreect sequence of colors represented by letters. The list of colors are:
       red='r'  green='g'  blue='b'  yellow='y'
       purple='p'  orange='o'  white='w'  silver='s'
       The guess should be inputted with space seperation like the example below:
-      r o s w...
-      You will also have the choice between guessing 4, 6 or 8 pegs as well as choosing to allow dupliactes of colors to set the difficulty to your liking. 
+      r o s w..."
+      puts"You will also have the choice between guessing 4, 6 or 8 pegs as well as choosing to allow dupliactes of colors to set the difficulty to your liking. 
       After each guess, all previous guesses will be displayed and next to those guesses will be a combination of '\u2713's','.' and 'x'. a '\u2713' 
       means that you have a color in the right place. A '.' means that you have the right color and an 'x' tells you that you have the wrong color. 
       But be warned the order of the combination of \u2713's,.s' and x's isn't the same as the actual sequence of colors. \u2713's will always appear first, then .'s and then x's.
