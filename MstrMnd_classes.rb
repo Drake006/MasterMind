@@ -95,7 +95,7 @@ class Display
   end
   
   def all_checks
-    checks<<guess_check
+    @checks<<guess_check
   end
   
   def show
