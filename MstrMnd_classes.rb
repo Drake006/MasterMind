@@ -81,7 +81,7 @@ class Display
   end
   
   def guess_check(sequence, guess)
-    results=' '
+    results=''
     guess.each_with_index do |color,index|
       if sequence[index]==color
         results += "\u2713"
