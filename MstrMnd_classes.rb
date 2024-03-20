@@ -56,7 +56,7 @@ class Play_Game
     else
       @sequence=Array.new(@create_game.pegs) {colors.sample}
     end
-    puts @sequence
+    print @sequence
   end
 end
 
