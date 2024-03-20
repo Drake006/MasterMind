@@ -62,8 +62,6 @@ class Play_Game
   def guess
     puts "Enter guess, seperated by spaces:"
     @guess=gets.chomp.split(' ')
-  end
-  def all_guesses
     @all_guesses << @guess
   end
   
