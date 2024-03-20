@@ -15,15 +15,13 @@ game_display= Display.new(play_game)
   puts "Guess ##{guess_number + 1}:"
   play_game.guess
 
-  game_display.guess_check(play_game.sequence, play_game.guess)
-  game_display.all_checks
-
   game_display.show
-
-  if play_game.guess==game_logic.sequence
-    puts "Congratulations! You've guessed the sequence correcty!"
-    break
-  end
+  break if play_game.sequence_guessed?
 end
-puts "You've used up all 10 guesses. The correct sequence was: #{play_game.sequence.join(' ')}" unless play_game.guess==play_game.sequence
+
+  if play_game.sequence_guessed?
+    puts "Congratulations! You've guessed the sequence correcty!"
+  else
+    puts "You've used up all 10 guesses. The correct sequence was: #{play_game.sequence.join(' ')}" unless play_game.guess==play_game.sequence
+  end
 
