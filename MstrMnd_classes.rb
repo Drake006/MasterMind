@@ -44,7 +44,7 @@ end
 
 #Play_game contains the functions that randomly selects the colors and stores the users guesses.
 class Play_Game
-  attr reader :sequence,:all_guesses
+  attr_reader :sequence,:all_guesses
   def initialize(create_game)
     @create_game=create_game
     @all_guesses=[]
