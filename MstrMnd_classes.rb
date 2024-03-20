@@ -80,8 +80,7 @@ class Display
     results=' '
     guess.each_with_index do |color,index|
       if sequence[index]==color
-        results += \u2713
-        results += ' '
+        results += '\u2713 '
       end
     end
     numChecks=results.size
