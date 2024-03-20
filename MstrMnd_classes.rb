@@ -100,7 +100,6 @@ class Display
   end
   
   def show
-    all_checks
     @play_game.all_guesses.each_with_index do |guess, index|
       print "Guess #{index + 1}: #{guess.join(' ')}  "  # Print the guess
       puts "Check: #{@checks[index]}"
