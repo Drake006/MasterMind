@@ -84,17 +84,17 @@ class Display
     results=' '
     guess.each_with_index do |color,index|
       if sequence[index]==color
-        results += "\u2713 "
+        results += "\u2713"
       end
     end
     numChecks=results.size
     period_num=sequence.intersection(guess).length-numChecks
     period_num.times do
-      results += '. '
+      results += '.'
     end
     remaining=sequence.length-results.length
     remaining.times do
-      results += 'x '
+      results += 'x'
     end
     results
   end
