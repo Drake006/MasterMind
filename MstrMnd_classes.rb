@@ -51,8 +51,12 @@ class Play_Game
     ['r','g','b','y','p','o','w','s']
   end
   def create_sequence
-    @sequence=colors.shuffle.take(@create_game.pegs)
-    print @sequence
+    if @create_game.dups==false
+      @sequence=colors.shuffle.take(@create_game.pegs)
+    else
+      @sequence=Array.new(@create_game.pegs) {colors.sample}
+    end
+    puts @sequence
   end
 end
 
