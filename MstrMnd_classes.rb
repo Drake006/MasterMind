@@ -78,9 +78,11 @@ class Display
   
   def guess_check(sequence, guess)
     results=' '
-    guess.each_with_index do |color,index|if sequence[index]==color
-      results += \u2713
-      results += ' '
+    guess.each_with_index do |color,index|
+      if sequence[index]==color
+        results += \u2713
+        results += ' '
+      end
     end
     numChecks=results.size
     period_num=sequence.intersection(guess).length-numChecks
