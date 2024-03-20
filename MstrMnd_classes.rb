@@ -80,7 +80,7 @@ class Display
     results=' '
     guess.each_with_index do |color,index|
       if sequence[index]==color
-        results += '\u2713 '
+        results += "\u2713 "
       end
     end
     numChecks=results.size
@@ -92,10 +92,11 @@ class Display
     remaining.times do
       results += 'x '
     end
+    results
   end
   
   def all_checks
-    @checks<<guess_check
+    @checks<<guess_check(@play_game.sequence, @play_game.all_guesses.last)
   end
   
   def show
