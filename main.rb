@@ -14,9 +14,9 @@ game_display= Display.new(play_game)
 10.times do |guess_number|
   puts "Guess ##{guess_number + 1}:"
   play_game.guess
-
+  game_display.guess_check(play_game.sequence, play_game.all_guesses.last)
   game_display.show
-  break if play_game.sequence_guessed?
+  break if play_game.sequence_guessed?||play_game.max_guesses_reached?
 end
 
   if play_game.sequence_guessed?
