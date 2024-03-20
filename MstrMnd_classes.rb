@@ -96,10 +96,13 @@ class Display
   end
   
   def all_checks
-    @checks<<guess_check(@play_game.sequence, @play_game.all_guesses.last)
+    @play_game.all_guesses.each do |guess|
+      @checks<<guess_check(@play_game.sequence, guess)
+    end
   end
   
   def show
+    all_checks
     @play_game.all_guesses.each_with_index do |guess, index|
       print "Guess #{index + 1}: #{guess.join(' ')}  "  # Print the guess
       puts "Check: #{@checks[index]}"
