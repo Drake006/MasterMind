@@ -92,9 +92,11 @@ class Display
       results += 'x '
     end
   end
+  
   def all_checks
     checks<<guess_check
   end
+  
   def show
     @play_game.all_guesses.each_with_index do |guess, index|
       print "Guess #{index + 1}: #{guess.join(' ')}  "  # Print the guess
