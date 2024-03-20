@@ -96,13 +96,7 @@ class Display
     remaining.times do
       results += 'x'
     end
-    results
-  end
-  
-  def all_checks
-    @play_game.all_guesses.each do |guess|
-      @checks<<guess_check(@play_game.sequence, guess)
-    end
+    @checks<<results
   end
   
   def show
