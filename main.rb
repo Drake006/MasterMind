@@ -1,4 +1,7 @@
-#allows the use of the classes in the classes file
+guess.each_with_index do |color,index|if sequence[index]==color
+      results += \u2713
+      results += ' '
+    end#allows the use of the classes in the classes file
 require_relative 'MstrMnd_classes'
 
 create_game = Create_Game.new
@@ -9,7 +12,7 @@ create_game.duplicates
 play_game = Play_Game.new(create_game)
 play_game.create_sequence
 
-game_display= Display.new(game_logic)
+game_display= Display.new(play_game)
 
 10.times do |guess_number|
   puts "Guess ##{guess_number + 1}:"
