@@ -1,7 +1,4 @@
-guess.each_with_index do |color,index|if sequence[index]==color
-      results += \u2713
-      results += ' '
-    end#allows the use of the classes in the classes file
+#allows the use of the classes in the classes file
 require_relative 'MstrMnd_classes'
 
 create_game = Create_Game.new
