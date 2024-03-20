@@ -64,7 +64,13 @@ class Play_Game
     @guess=gets.chomp.split(' ')
     @all_guesses << @guess
   end
-  
+  def sequence_guessed?
+    @all_guesses.include?(@sequence)
+  end
+
+  def max_guesses_reached?
+    @all_guesses.length >= @max_guesses
+  end
 end
 
 #The Display class contains all of the functions necessary to show the results of a guesses and previous guesses while checking the guesses goes hand in hand woth Play_Game.
