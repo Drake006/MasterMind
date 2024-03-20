@@ -11,7 +11,7 @@ class Create_Game
       purple='p'  orange='o'  white='w'  silver='s'"
       puts"The guess should be inputted with space seperation like the example below:
       r o s w..."
-      puts"You will also have the choice between guessing 4, 6 or 8 pegs as well as choosing to allow dupliactes of colors to set the difficulty to your liking. After each guess, all previous guesses will be displayed and next to those guesses will be a combination of '\u2713's','.'s' and/or 'x's'. A '\u2713' means that you have a color in the right place. A '.' means that you have the right color and an 'x' tells you that you have the wrong color. But be warned, the order of the combination of \u2713's,.s' and x's isn't the same as the actual sequence of colors. \u2713's will always appear first, then .'s and then x's. Once the Game is finished you will have the option to select a play again and choose different paramaters (or the same ones) is you so please."
+      puts"You will also have the choice between guessing 4, 6 or 8 pegs as well as choosing to allow dupliactes of colors to set the difficulty to your liking. After each guess, all previous guesses will be displayed and next to those guesses will be a combination of '\u2713's','.'s' and/or 'x's'. A '\u2713' means that you have a color in the right place. A '.' means that you have the right color and an 'x' tells you that you have the wrong color. But be warned, the order of the combination of \u2713's,.s' and x's isn't the same as the actual sequence of colors. \u2713's will always appear first, then .'s and then x's. The game is finished when you either use up all 10 guesses or get the sequence correct. At the end, you will have the option to play again and choose different paramaters if you so please."
       puts "Enjoy :)"
     end
   end
@@ -42,10 +42,12 @@ class Create_Game
   end
 end
 
-#Play_game contains the functions that randomly selects the colors and stores the users guesses, works with the Display class.
+#Play_game contains the functions that randomly selects the colors and stores the users guesses.
 class Play_Game
+  attr reader :sequence,:all_guesses
   def initialize(create_game)
     @create_game=create_game
+    @all_guesses=[]
   end
   def colors
     ['r','g','b','y','p','o','w','s']
@@ -56,11 +58,45 @@ class Play_Game
     else
       @sequence=Array.new(@create_game.pegs) {colors.sample}
     end
-    print @sequence
   end
+  def guess
+    puts "Enter guess, seperated by spaces:"
+    @guess=gets.chomp.split(' ')
+  end
+  def all_guesses
+    @all_guesses << @guess
+  end
+  
 end
 
-#The Display class contains all of the functions necessary to show the results of a guesses and previous guesses, goes hand in hand woth Play_Game.
+#The Display class contains all of the functions necessary to show the results of a guesses and previous guesses while checking the guesses goes hand in hand woth Play_Game.
 class Display
+  def initialize(play_game)
+    @play_game=play_game
+    @checks=[]
+  end
+  
+  def guess_check(sequence, guess)
+    results=' '
+    guess.each_with_index do |color,index|if sequence[index]==color
+      results += \u2713
+      results += ' '
+    end
+    numChecks=results.size
+    period_num=sequence.intersection(guess).length-numChecks
+    period_num.times do
+      results += '. '
+    end
+    remaining=sequence.length-results.length
+    remaining.times do
+      results += 'x '
+    end
+  end
+  def all_checks
+    checks<<guess_check
+  end
+  def show
+    
+  end
 end
 
