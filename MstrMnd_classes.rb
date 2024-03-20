@@ -48,7 +48,7 @@ class Play_Game
   def initialize(create_game)
     @create_game=create_game
     @all_guesses=[]
-    @max.guesses = 10
+    @max_guesses = 10
   end
   def colors
     ['r','g','b','y','p','o','w','s']
