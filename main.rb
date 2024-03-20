@@ -14,7 +14,6 @@ game_display= Display.new(play_game)
 10.times do |guess_number|
   puts "Guess ##{guess_number + 1}:"
   play_game.guess
-  play_game.all_guesses
 
   game_display.guess_check(play_game.sequence, play_game.guess)
   game_display.all_checks
@@ -26,5 +25,5 @@ game_display= Display.new(play_game)
     break
   end
 end
-puts "You've used up all 10 guesses. The correct sequence was: #{game_logic.sequence.join(' ')}" unless play_game.guess==play_game.sequence
+puts "You've used up all 10 guesses. The correct sequence was: #{play_game.sequence.join(' ')}" unless play_game.guess==play_game.sequence
 
